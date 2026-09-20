@@ -1,0 +1,48 @@
+site_name: Sonata Docs
+site_description: Documentation for Sonata
+site_url: https://sonata.github.io/docs/
+repo_url: https://github.com/Sonata-CLI/docs
+repo_name: GitHub
+
+theme:
+    name: material
+
+    features:
+        - navigation.tabs
+        - navigation.sections
+        - navigation.expand
+        - navigation.top
+        - search.suggest
+        - search.highlight
+        - content.code.copy
+        - attr_list
+
+    palette:
+        - media: "(prefers-color-scheme: light)"
+          scheme: default
+          toggle:
+            icon: material/weather-sunny
+            name: Switch to dark mode
+
+        - media: "(prefers-color-scheme: dark)"
+          scheme: slate
+          toggle:
+            icon: material/weather-night
+            name: Switch to light mode
+
+markdown_extensions:
+    - admonition
+    - pymdownx.details
+    - pymdownx.superfences
+    - pymdownx.highlight
+    - pymdownx.inlinehilite
+
+nav:
+    - Home: index.md
+    - Guide: guide/index.md
+    - API:
+        - Overview: api/index.md
+        - Source:
+            - Overview: api/source/index.md
+        - Module:
+            - Overview: api/module/index.md
