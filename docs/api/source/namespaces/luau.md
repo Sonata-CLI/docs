@@ -1,5 +1,4 @@
 # <code><a href="../sonata">sonata</a>::luau</code> (namespace)
-
 The namespace for the Sonata Luau API.
 
 !!! note

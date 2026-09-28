@@ -1,3 +1,10 @@
+---
+hide:
+  - toc
+search:
+  exclude: true
+---
+
 # C++ API Reference
 
 The C++ API reference documents the public interface provided by the toolkit.

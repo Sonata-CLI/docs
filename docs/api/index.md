@@ -1,3 +1,10 @@
+---
+hide:
+  - toc
+search:
+  exclude: true
+---
+
 # API Reference
 Welcome to the API Reference. Here lies information about built-in *modules, globals, etc.* and their expected arguments, returns, their types, and similar stuff.
 
