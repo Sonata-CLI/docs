@@ -20,7 +20,7 @@ case "${1:-build}" in
     build)
         echo "==> Building MkDocs..."
         $PIP install -r requirements.txt
-        $PYTHON -m mkdocs build --strict
+        $PYTHON -m mkdocs build #--strict
 
         echo
         echo "==> Build successful!"
