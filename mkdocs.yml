@@ -78,5 +78,9 @@ nav:
                 - sonata: api/source/namespaces/sonata.md
                 - cli: api/source/namespaces/cli.md
                 - util: api/source/namespaces/util.md
+            - Classes:
+                - cli::CLI: api/source/classes/cli.md
+                - cli::Command: api/source/classes/cli_command.md
+                - cli::Argument: api/source/classes/cli_argument.md
         - Module:
             - api/module/index.md

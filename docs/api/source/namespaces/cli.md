@@ -2,16 +2,11 @@
 
 The <code><a href="../sonata">sonata</a>::cli</code> namespace contains classes for interacting with the `sn` command.
 
-## Classes
+## Classes & Structs
 
 | Class | Description |
 |---|---|
 | [`CLI`](../classes/cli.md) | Represents a new CLI command e.g. `sn`. |
-
-## Structs
-
-| Struct | Description |
-|---|---|
 | [`Command`](../classes/cli_command.md) | Represents a command e.g. `init` or `build`. |
 | [`Argument`](../classes/cli_argument.md) | Represents an argument for a [Command](../classes/cli_command.md), like `--help`. |
 

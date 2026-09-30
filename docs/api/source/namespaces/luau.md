@@ -1,52 +1,27 @@
 # <code><a href="../sonata">sonata</a>::luau</code> (namespace)
 The namespace for the Sonata Luau API.
 
-!!! note
-
-    This namespace currently only contains utility for parsing/generating project manifest files.
-
 ## Overview
 
-The `sonata::luau` namespace provides functionality for representing Luau
-values, parsing Sonata manifests, serializing values, and managing globals
-available to manifests.
+The `sonata::luau` namespace provides functionality for Luau-related tasks, such as:
+- Creating, managing and running a Luau VM
+- Parsing, creating and serializing Luau tables
+- Module and multi-file importing
+- Managing a global Luau environment
+- Compiling Luau files
 
-It provides type-safe runtime values, manifest parsing and serialization,
-parse error reporting, and manifest environments.
-
-## Classes
-
+## Classes & Structs
 | Class | Description |
 |---|---|
-| [`Value`](../classes/value.md) | Represents a dynamically typed Luau value. |
-| [`Environment`](../classes/environment.md) | Defines globals available while parsing manifests. |
-
-## Structs
-
-| Struct | Description |
-|---|---|
-| [`Global`](../classes/global.md) | Represents a reference to a manifest global. |
-| [`ParseError`](../classes/parse-error.md) | Describes an error encountered while parsing a manifest. |
-| [`ParseResult`](../classes/parse-result.md) | Contains the result of parsing a manifest, including either a value or an error. |
-
-## Enums
-
-| Enum | Description |
-|---|---|
-| [`ValueType`](../enums/value-type.md) | Describes the type of a [`Value`](../classes/value.md). |
-
-## Type Aliases
-
-| Alias | Description |
-|---|---|
-| `Array` | A sequence of [`Value`](../classes/value.md) objects. |
-| `Table` | A string-keyed collection of [`Value`](../classes/value.md) objects. |
-
-## Functions
-
-| Function | Description |
-|---|---|
-| [`parseManifest()`](../functions/parse-manifest.md) | Parses a Sonata manifest without creating a VM or executing Luau code. |
-| [`serializeManifest()`](../functions/serialize-manifest.md) | Serializes a [`Value`](../classes/value.md) into Sonata manifest source. |
-| [`parse()`](../functions/parse.md) | Convenience function for parsing manifest source. |
-| [`serialize()`](../functions/serialize.md) | Convenience function for serializing a [`Value`](../classes/value.md). |
+| [`Bytecode`](../classes/luau_bytecode.md) | Represents the execution-ready data gotten from compiling Luau. |
+| [`Environment`](../classes/luau_environment.md) | For storing and loading globals such as `require()`. |
+| [`Compiler`](../classes/luau_compiler.md) | For turning Luau source code into execution-ready [`Bytecode`](../classes/luau_bytecode.md). |
+| [`VM`](../classes/luau_vm.md) | Allows easier management and executing of Lua states. |
+| [`DataFile`](../classes/luau_datafile.md) | Used for parsing or creating static Luau tables. |
+| [`DataFileError`](../classes/luau_datafileerror.md) | Inherited from std::runtime_error, represents an error from a [`DataFile`](../classes/luau_datafile.md) operation. |
+| [`DataValue`](../classes/luau_datavalue.md) | A very flexible class that represents a value inside of a [`DataFile`](../classes/luau_datafile.md). |
+| [`ModuleError`](../classes/luau_moduleerror.md) | Inherited from std::runtime_error, represents an error raised by the module system. |
+| [`ModuleSource`](../classes/luau_modulesource.md) | Abstract interface for retrieving module bytecode. |
+| [`FileSystemSource`](../classes/luau_filesystemsource.md) | Implements [`ModuleSource`](../classes/luau_modulesource.md) to read and compile `.luau` files directly from disk. |
+| [`MemorySource`](../classes/luau_memorysource.md) | Implements [`ModuleSource`](../classes/luau_modulesource.md) to hold and load precompiled bytecode in memory. |
+| [`ModuleLoader`](../classes/luau_moduleloader.md) | Implements path resolution, path aliasing, and `require()` functionality for a [`VM`](../classes/luau_vm.md). |
